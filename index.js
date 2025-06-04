@@ -23,48 +23,53 @@
 
 class Publicacion {
   constructor(titulo, autor) {
-   
+   this.titulo = titulo;
+   this.autor = autor;
   }
 
   obtenerDescripcion() {
-    
+    return `"${this.titulo}" por ${this.autor}`;
   }
 }
 
 // Subclase Libro
 class Libro extends Publicacion {
   constructor(titulo, autor, numeroPaginas) {
-  
+    super(titulo, autor);
+    this.numeroPaginas = numeroPaginas;
   }
 
   obtenerDescripcion() {
-  
+    return `"${this.titulo}" por ${this.autor} - ${this.numeroPaginas} páginas.`;
   }
 }
 
 // Subclase Revista
 class Revista extends Publicacion {
   constructor(titulo, autor, numeroEdicion) {
- 
+    super(titulo, autor);
+    this.numeroEdicion = numeroEdicion;
   }
 
   obtenerDescripcion() {
-    
+    return `"${this.titulo}" por ${this.autor} - Edición Nº ${this.numeroEdicion}.`;
   }
 }
 
 // Clase Biblioteca
 class Biblioteca {
   constructor() {
-  
+   this.publicaciones = [];
   }
 
   agregarPublicacion(pub) {
-   
+   this.publicaciones.push(pub);
   }
 
   mostrarPublicaciones() {
-    
+     for (let i = 0; i < this.publicaciones.length; i++) {
+       console.log(this.publicaciones[i].obtenerDescripcion());
+     }
   }
 }
 

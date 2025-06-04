@@ -11,5 +11,8 @@
   },
   "author": "desarrollo prodevs",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "clasesprodevs": "file:"
+  }
 }
